@@ -378,7 +378,7 @@ will not add accounts into this list. For that use
 :ref:`web3.eth.personal.newAccount() <personal-newaccount>`.
 
 The results are the same as :ref:`web3.eth.getAccounts() <eth-getaccounts>` except that calls
-the RPC method ``eth_accounts``.
+the RPC method ``ccm_accounts``.
 
 -------
 Returns

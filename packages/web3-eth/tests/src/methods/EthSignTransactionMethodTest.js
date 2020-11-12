@@ -56,6 +56,6 @@ describe('EthSignTransactionMethodTest', () => {
         method.parameters = [{}];
         method.execute();
 
-        expect(moduleInstanceMock.currentProvider.send).toHaveBeenCalledWith('eth_signTransaction', method.parameters);
+        expect(moduleInstanceMock.currentProvider.send).toHaveBeenCalledWith('ccm_signTransaction', method.parameters);
     });
 });

@@ -31,6 +31,6 @@ export default class GetWorkMethod extends AbstractMethod {
      * @constructor
      */
     constructor(utils, formatters, moduleInstance) {
-        super('eth_getWork', 0, utils, formatters, moduleInstance);
+        super('ccm_getWork', 0, utils, formatters, moduleInstance);
     }
 }

@@ -31,7 +31,7 @@ export default class SignMethod extends AbstractMethod {
      * @constructor
      */
     constructor(utils, formatters, moduleInstance) {
-        super('eth_sign', 2, utils, formatters, moduleInstance);
+        super('ccm_sign', 2, utils, formatters, moduleInstance);
     }
 
     /**

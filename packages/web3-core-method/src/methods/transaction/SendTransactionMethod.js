@@ -32,7 +32,7 @@ export default class SendTransactionMethod extends AbstractObservedTransactionMe
      * @constructor
      */
     constructor(utils, formatters, moduleInstance, transactionObserver) {
-        super('eth_sendTransaction', 1, utils, formatters, moduleInstance, transactionObserver);
+        super('ccm_sendTransaction', 1, utils, formatters, moduleInstance, transactionObserver);
     }
 
     /**

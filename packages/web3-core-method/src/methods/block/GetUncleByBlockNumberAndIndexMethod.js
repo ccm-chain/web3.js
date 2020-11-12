@@ -31,6 +31,6 @@ export default class GetUncleByBlockNumberAndIndexMethod extends AbstractGetUncl
      * @constructor
      */
     constructor(utils, formatters, moduleInstance) {
-        super('eth_getUncleByBlockNumberAndIndex', utils, formatters, moduleInstance);
+        super('ccm_getUncleByBlockNumberAndIndex', utils, formatters, moduleInstance);
     }
 }

@@ -260,7 +260,7 @@ setSolc
 
     admin.setSolc(string, [, callback])
 
-Sets the Solidity compiler path to be used by the node when invoking the eth_compileSolidity RPC method
+Sets the Solidity compiler path to be used by the node when invoking the ccm_compileSolidity RPC method
 The RPC method used is ``admin_setSolc``.
 
 ----------

@@ -31,7 +31,7 @@ export default class GetBlockTransactionCountMethod extends AbstractGetBlockTran
      * @constructor
      */
     constructor(utils, formatters, moduleInstance) {
-        super('eth_getBlockTransactionCountByNumber', utils, formatters, moduleInstance);
+        super('ccm_getBlockTransactionCountByNumber', utils, formatters, moduleInstance);
     }
 
     /**
@@ -45,7 +45,7 @@ export default class GetBlockTransactionCountMethod extends AbstractGetBlockTran
      */
     beforeExecution(moduleInstance) {
         if (this.isHash(this.parameters[0])) {
-            this.rpcMethod = 'eth_getBlockTransactionCountByHash';
+            this.rpcMethod = 'ccm_getBlockTransactionCountByHash';
         }
 
         super.beforeExecution(moduleInstance);

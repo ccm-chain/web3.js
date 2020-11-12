@@ -45,7 +45,7 @@ export default class ContractDeployMethod extends EthSendTransactionMethod {
      * @param {AbstractWeb3Module} moduleInstance - The module where the method is called from for example Eth.
      */
     beforeExecution(moduleInstance) {
-        if (this.rpcMethod !== 'eth_sendRawTransaction') {
+        if (this.rpcMethod !== 'ccm_sendRawTransaction') {
             super.beforeExecution(moduleInstance);
             delete this.parameters[0].to;
         }

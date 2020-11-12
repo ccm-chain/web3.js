@@ -31,7 +31,7 @@ export default class GetUncleMethod extends AbstractGetUncleMethod {
      * @constructor
      */
     constructor(utils, formatters, moduleInstance) {
-        super('eth_getUncleByBlockNumberAndIndex', utils, formatters, moduleInstance);
+        super('ccm_getUncleByBlockNumberAndIndex', utils, formatters, moduleInstance);
     }
 
     /**
@@ -43,7 +43,7 @@ export default class GetUncleMethod extends AbstractGetUncleMethod {
      */
     beforeExecution(moduleInstance) {
         if (this.isHash(this.parameters[0])) {
-            this.rpcMethod = 'eth_getUncleByBlockHashAndIndex';
+            this.rpcMethod = 'ccm_getUncleByBlockHashAndIndex';
         }
 
         super.beforeExecution(moduleInstance);

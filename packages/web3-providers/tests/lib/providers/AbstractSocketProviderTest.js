@@ -122,12 +122,12 @@ describe('AbstractSocketProviderTest', () => {
 
         abstractSocketProvider.subscriptions.set('0x0', {
             id: '0x0',
-            subscribeMethod: 'eth_subscribe',
+            subscribeMethod: 'ccm_subscribe',
             parameters: ['logs', {}]
         });
 
         abstractSocketProvider.send = jest.fn((subscribeMethod, parameters) => {
-            expect(subscribeMethod).toEqual('eth_subscribe');
+            expect(subscribeMethod).toEqual('ccm_subscribe');
 
             expect(parameters).toEqual(['logs', {}]);
 
@@ -229,7 +229,7 @@ describe('AbstractSocketProviderTest', () => {
     });
 
     it('calls unsubscribe and subscription id does not exist', () => {
-        expect(abstractSocketProvider.unsubscribe('no', 'eth_unsubscribe')).rejects.toThrow(
+        expect(abstractSocketProvider.unsubscribe('no', 'ccm_unsubscribe')).rejects.toThrow(
             'Provider error: Subscription with ID no does not exist.'
         );
     });
@@ -239,14 +239,14 @@ describe('AbstractSocketProviderTest', () => {
         abstractSocketProvider.removeAllListeners = jest.fn();
 
         abstractSocketProvider.send = jest.fn((subscribeMethod, parameters) => {
-            expect(subscribeMethod).toEqual('eth_unsubscribe');
+            expect(subscribeMethod).toEqual('ccm_unsubscribe');
 
             expect(parameters).toEqual(['0x0']);
 
             return Promise.resolve(true);
         });
 
-        const reaponse = await abstractSocketProvider.unsubscribe('0x0', 'eth_unsubscribe');
+        const reaponse = await abstractSocketProvider.unsubscribe('0x0', 'ccm_unsubscribe');
 
         expect(reaponse).toEqual(true);
 
@@ -256,33 +256,33 @@ describe('AbstractSocketProviderTest', () => {
     });
 
     it('calls clearSubscriptions and one unsubscribe call returns false', async () => {
-        abstractSocketProvider.subscriptions.set('0x0', {id: '0x0', subscribeMethod: 'eth_subscribe'});
+        abstractSocketProvider.subscriptions.set('0x0', {id: '0x0', subscribeMethod: 'ccm_subscribe'});
 
         abstractSocketProvider.send = jest.fn((subscribeMethod, parameters) => {
-            expect(subscribeMethod).toEqual('eth_unsubscribe');
+            expect(subscribeMethod).toEqual('ccm_unsubscribe');
 
             expect(parameters).toEqual(['0x0']);
 
             return Promise.resolve(false);
         });
 
-        await expect(abstractSocketProvider.clearSubscriptions('eth_unsubscribe')).rejects.toThrow(
+        await expect(abstractSocketProvider.clearSubscriptions('ccm_unsubscribe')).rejects.toThrow(
             `Could not unsubscribe all subscriptions: ${JSON.stringify([false])}`
         );
     });
 
     it('calls clearSubscriptions and all unsubscribe calls are returning true', async () => {
-        abstractSocketProvider.subscriptions.set('0x0', {id: '0x0', subscribeMethod: 'eth_subscribe'});
+        abstractSocketProvider.subscriptions.set('0x0', {id: '0x0', subscribeMethod: 'ccm_subscribe'});
 
         abstractSocketProvider.send = jest.fn((subscribeMethod, parameters) => {
-            expect(subscribeMethod).toEqual('eth_unsubscribe');
+            expect(subscribeMethod).toEqual('ccm_unsubscribe');
 
             expect(parameters).toEqual(['0x0']);
 
             return Promise.resolve(true);
         });
 
-        const response = await abstractSocketProvider.clearSubscriptions('eth_unsubscribe');
+        const response = await abstractSocketProvider.clearSubscriptions('ccm_unsubscribe');
 
         expect(response).toEqual(true);
 
@@ -290,10 +290,10 @@ describe('AbstractSocketProviderTest', () => {
     });
 
     it('calls clearSubscriptions without a type given and all unsubscribe calls are returning true', async () => {
-        abstractSocketProvider.subscriptions.set('0x0', {id: '0x0', subscribeMethod: 'eth_subscribe'});
+        abstractSocketProvider.subscriptions.set('0x0', {id: '0x0', subscribeMethod: 'ccm_subscribe'});
 
         abstractSocketProvider.send = jest.fn((subscribeMethod, parameters) => {
-            expect(subscribeMethod).toEqual('eth_unsubscribe');
+            expect(subscribeMethod).toEqual('ccm_unsubscribe');
 
             expect(parameters).toEqual(['0x0']);
 

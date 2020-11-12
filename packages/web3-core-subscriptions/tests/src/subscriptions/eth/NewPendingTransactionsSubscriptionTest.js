@@ -13,7 +13,7 @@ describe('NewPendingTransactionsSubscriptionTest', () => {
     it('constructor check', () => {
         expect(newPendingTransactionsSubscription.method).toEqual('newPendingTransactions');
 
-        expect(newPendingTransactionsSubscription.type).toEqual('eth_subscribe');
+        expect(newPendingTransactionsSubscription.type).toEqual('ccm_subscribe');
 
         expect(newPendingTransactionsSubscription.options).toEqual(null);
 

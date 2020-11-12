@@ -163,7 +163,7 @@ export default class BatchRequest {
                 if (account) {
                     const response = await method.signTransaction(account);
                     method.parameters = [response.rawTransaction];
-                    method.rpcMethod = 'eth_sendRawTransaction';
+                    method.rpcMethod = 'ccm_sendRawTransaction';
 
                     this.accounts[i] = account;
                 }

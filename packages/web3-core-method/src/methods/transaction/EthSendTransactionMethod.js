@@ -68,7 +68,7 @@ export default class EthSendTransactionMethod extends SendTransactionMethod {
      * @param {AbstractWeb3Module} moduleInstance - The module where the method is called from for example Eth.
      */
     beforeExecution(moduleInstance) {
-        if (this.rpcMethod !== 'eth_sendRawTransaction') {
+        if (this.rpcMethod !== 'ccm_sendRawTransaction') {
             super.beforeExecution(moduleInstance);
         }
     }
@@ -89,7 +89,7 @@ export default class EthSendTransactionMethod extends SendTransactionMethod {
         if (!this.parameters[0].gasPrice && this.parameters[0].gasPrice !== 0) {
             if (!this.moduleInstance.defaultGasPrice) {
                 this.moduleInstance.currentProvider
-                    .send('eth_gasPrice', [])
+                    .send('ccm_gasPrice', [])
                     .then((gasPrice) => {
                         this.parameters[0].gasPrice = gasPrice;
 
@@ -141,7 +141,7 @@ export default class EthSendTransactionMethod extends SendTransactionMethod {
         const response = await this.signTransaction(account);
 
         this.parameters = [response.rawTransaction];
-        this.rpcMethod = 'eth_sendRawTransaction';
+        this.rpcMethod = 'ccm_sendRawTransaction';
 
         return super.execute();
     }

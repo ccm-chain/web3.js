@@ -371,8 +371,8 @@ describe('BatchRequestTest', () => {
 
         expect(abstractMethodMock.parameters).toEqual(['0x0']);
 
-        expect(abstractMethodMock.rpcMethod).toEqual('eth_sendRawTransaction');
+        expect(abstractMethodMock.rpcMethod).toEqual('ccm_sendRawTransaction');
 
-        expect(JsonRpcMapper.toPayload).toHaveBeenCalledWith('eth_sendRawTransaction', ['0x0']);
+        expect(JsonRpcMapper.toPayload).toHaveBeenCalledWith('ccm_sendRawTransaction', ['0x0']);
     });
 });

@@ -31,6 +31,6 @@ export default class GetCoinbaseMethod extends AbstractMethod {
      * @constructor
      */
     constructor(utils, formatters, moduleInstance) {
-        super('eth_coinbase', 0, utils, formatters, moduleInstance);
+        super('ccm_coinbase', 0, utils, formatters, moduleInstance);
     }
 }

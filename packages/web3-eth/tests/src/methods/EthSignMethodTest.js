@@ -117,6 +117,6 @@ describe('EthSignMethodTest', () => {
 
         method.execute();
 
-        expect(moduleInstanceMock.currentProvider.send).toHaveBeenCalledWith('eth_sign', method.parameters);
+        expect(moduleInstanceMock.currentProvider.send).toHaveBeenCalledWith('ccm_sign', method.parameters);
     });
 });

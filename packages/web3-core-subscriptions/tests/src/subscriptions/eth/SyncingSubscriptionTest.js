@@ -15,7 +15,7 @@ describe('SyncingSubscriptionTest', () => {
 
         expect(syncingSubscription.method).toEqual('syncing');
 
-        expect(syncingSubscription.type).toEqual('eth_subscribe');
+        expect(syncingSubscription.type).toEqual('ccm_subscribe');
 
         expect(syncingSubscription.options).toEqual(null);
     });

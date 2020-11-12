@@ -32,7 +32,7 @@ export default class GetStorageAtMethod extends AbstractMethod {
      * @constructor
      */
     constructor(utils, formatters, moduleInstance) {
-        super('eth_getStorageAt', 3, utils, formatters, moduleInstance);
+        super('ccm_getStorageAt', 3, utils, formatters, moduleInstance);
     }
 
     /**

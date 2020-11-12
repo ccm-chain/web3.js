@@ -80,10 +80,10 @@ export default class Registry extends AbstractContract {
      */
     clearSubscriptions() {
         if (this.resolverContract) {
-            this.resolverContract.clearSubscriptions('eth_unsubscribe');
+            this.resolverContract.clearSubscriptions('ccm_unsubscribe');
         }
 
-        return super.clearSubscriptions('eth_unsubscribe');
+        return super.clearSubscriptions('ccm_unsubscribe');
     }
 
     /**

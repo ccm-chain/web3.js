@@ -193,7 +193,7 @@ export const inputTransactionFormatter = (txObject, moduleInstance) => {
 };
 
 /**
- * Hex encodes the data passed to eth_sign and personal_sign
+ * Hex encodes the data passed to ccm_sign and personal_sign
  *
  * @method inputSignFormatter
  *

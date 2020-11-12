@@ -31,7 +31,7 @@ export default class GetProofMethod extends AbstractMethod {
      * @constructor
      */
     constructor(utils, formatters, moduleInstance) {
-        super('eth_getProof', 3, utils, formatters, moduleInstance);
+        super('ccm_getProof', 3, utils, formatters, moduleInstance);
     }
 
     /**

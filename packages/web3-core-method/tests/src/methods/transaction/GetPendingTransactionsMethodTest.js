@@ -18,7 +18,7 @@ describe('GetPendingTransactionsMethodTest', () => {
     it('constructor check', () => {
         expect(method).toBeInstanceOf(AbstractMethod);
 
-        expect(method.rpcMethod).toEqual('eth_pendingTransactions');
+        expect(method.rpcMethod).toEqual('ccm_pendingTransactions');
 
         expect(method.parametersAmount).toEqual(0);
 

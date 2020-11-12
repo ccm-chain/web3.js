@@ -31,6 +31,6 @@ export default class GetBlockUncleCountByBlockNumberMethod extends AbstractGetBl
      * @constructor
      */
     constructor(utils, formatters, moduleInstance) {
-        super('eth_getUncleCountByBlockNumber', utils, formatters, moduleInstance);
+        super('ccm_getUncleCountByBlockNumber', utils, formatters, moduleInstance);
     }
 }

@@ -27,7 +27,7 @@ describe('LogSubscriptionTest', () => {
     it('constructor check', () => {
         expect(logSubscription.method).toEqual('logs');
 
-        expect(logSubscription.type).toEqual('eth_subscribe');
+        expect(logSubscription.type).toEqual('ccm_subscribe');
 
         expect(logSubscription.options).toEqual({});
 
@@ -46,7 +46,7 @@ describe('LogSubscriptionTest', () => {
         getPastLogsMethodMock.execute.mockReturnValueOnce(Promise.resolve([0]));
 
         socketProviderMock.subscribe = jest.fn((type, method, parameters) => {
-            expect(type).toEqual('eth_subscribe');
+            expect(type).toEqual('ccm_subscribe');
 
             expect(method).toEqual('logs');
 
@@ -151,7 +151,7 @@ describe('LogSubscriptionTest', () => {
         formatters.outputLogFormatter.mockReturnValueOnce('ITEM');
 
         socketProviderMock.subscribe = jest.fn((type, method, parameters) => {
-            expect(type).toEqual('eth_subscribe');
+            expect(type).toEqual('ccm_subscribe');
 
             expect(method).toEqual('logs');
 

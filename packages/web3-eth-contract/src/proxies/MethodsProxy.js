@@ -188,7 +188,7 @@ export default class MethodsProxy {
         const method = this.methodFactory.createMethodByRequestType(abiItemModel, this.contract, requestType);
         method.setArguments(methodArguments);
 
-        // If no parameters are given for the eth_call or eth_send* methods then it will set a empty options object.
+        // If no parameters are given for the ccm_call or ccm_send* methods then it will set a empty options object.
         if (!method.parameters[0]) {
             method.parameters[0] = {};
         }

@@ -35,7 +35,7 @@ export default class LogSubscription extends AbstractSubscription {
      * @constructor
      */
     constructor(options, utils, formatters, moduleInstance, getPastLogsMethod) {
-        super('eth_subscribe', 'logs', options, utils, formatters, moduleInstance);
+        super('ccm_subscribe', 'logs', options, utils, formatters, moduleInstance);
         this.getPastLogsMethod = getPastLogsMethod;
     }
 

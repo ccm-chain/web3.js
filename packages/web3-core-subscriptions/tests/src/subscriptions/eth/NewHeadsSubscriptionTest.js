@@ -19,7 +19,7 @@ describe('NewHeadsSubscriptionTest', () => {
     it('constructor check', () => {
         expect(newHeadsSubscription.method).toEqual('newHeads');
 
-        expect(newHeadsSubscription.type).toEqual('eth_subscribe');
+        expect(newHeadsSubscription.type).toEqual('ccm_subscribe');
 
         expect(newHeadsSubscription.options).toEqual(null);
 

@@ -31,6 +31,6 @@ export default class NewPendingTransactionsSubscription extends AbstractSubscrip
      * @constructor
      */
     constructor(utils, formatters, moduleInstance) {
-        super('eth_subscribe', 'newPendingTransactions', null, utils, formatters, moduleInstance);
+        super('ccm_subscribe', 'newPendingTransactions', null, utils, formatters, moduleInstance);
     }
 }
